@@ -1,0 +1,3 @@
+rootProject.name = "AndroidJsModule"
+include ':app'
+include ':AndroidJs'
