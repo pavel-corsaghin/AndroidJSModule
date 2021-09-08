@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * The advanced example shows how to use library to get executed kotlin object
-     * Our library using kotlinx serializable to encode/decode object
+     * Our library is using kotlinx serializable to encode/decode object
      * Please make sure you have added @Serializable annotation to result class
      */
     private fun executeToGetObjectExample() {

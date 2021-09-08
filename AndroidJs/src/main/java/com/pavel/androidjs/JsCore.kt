@@ -6,6 +6,9 @@ package com.pavel.androidjs
  * Happy coding ^_^
  */
 
+/**
+ * Utility class that load native library and execute native methods
+ */
 object JsCore {
     /**
      * Load the native library

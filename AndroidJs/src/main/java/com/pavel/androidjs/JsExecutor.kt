@@ -13,10 +13,19 @@ import java.lang.Exception
  * Happy coding ^_^
  */
 
+/**
+ * Utility class that helps to load/execute javascript code
+ */
 object JsExecutor {
 
     val jsonConverter = Json { ignoreUnknownKeys = true }
 
+    /**
+     * Method loads javascript bundle file from assets folder.
+     * The script will be cached until we load another file/script
+     * @param context: The Context for open file
+     * @param jsBundleFileName: The file name, should be in format path/to/your/jsBundle.js
+     */
     fun loadJsBundle(context: Context, jsBundleFileName: String) {
         val script = context.assets.open(jsBundleFileName)
             .bufferedReader()
@@ -26,10 +35,21 @@ object JsExecutor {
         JsCore.loadJsScript(script)
     }
 
+    /**
+     * Method loads javascript bundle file from javascript plain string.
+     * The script will be cached until we load another file/script
+     * @param script: The javascript code
+     */
     fun loadPlainScript(script: String) {
         JsCore.loadJsScript(script)
     }
 
+    /**
+     * Method executes javascript function with parameters
+     * @param functionName: The function name, should be in format path.to.your.function
+     * @param params: should be primitive types or json string
+     * @return the result of javascript function in String
+     */
     fun execute(
         functionName: String,
         vararg params: Any?
@@ -38,6 +58,12 @@ object JsExecutor {
         return JsCore.executeJsFunction(function)
     }
 
+    /**
+     * Method executes javascript function with parameters
+     * @param functionName: The function name, should be in format path.to.your.function
+     * @param params: should be primitive types or json string
+     * @return the result of javascript function in provided generic type
+     */
     inline fun <reified T> executeToGetObject(
         functionName: String,
         vararg params: Any?
