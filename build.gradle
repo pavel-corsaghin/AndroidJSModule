@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.5.0"
+    ext.nexus_version = "1.1.0"
     repositories {
         google()
         mavenCentral()
@@ -15,6 +16,10 @@ buildscript {
     }
 }
 
+plugins {
+    id("io.github.gradle-nexus.publish-plugin") version "$nexus_version"
+}
+
 allprojects {
     repositories {
         google()
@@ -26,3 +31,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+apply from: "${rootDir}/scripts/publish-root.gradle"

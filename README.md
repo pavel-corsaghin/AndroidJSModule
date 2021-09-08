@@ -1,16 +1,22 @@
 # AndroidJSModule
+![Maven Central](https://img.shields.io/maven-central/v/io.github.pavel-corsaghin/androidjs.svg)
 
 A simple library that helps Android developers to execute JavaScript code from Android native side easily without using Webview.
 
 ## Installation
 
-Will distribute library via maven central repository and provide package soon
+The easiest way to add the library to your project is by adding it as a dependency to your `build.gradle`
+```groovy
+dependencies {
+    implementation "io.github.pavel-corsaghin:androidjs:${release_version}""
+}
+```
 
 ## Usage
 
 - Usage library with plain javascript code:
 
-```sh
+```groovy
 // Load plain script
 val plainScript = "var js_obj = {add: function(a,b) { return a+b; }, multiply: function(a,b) { return a*b; }};"
 JsExecutor.loadPlainScript(plainScript)
@@ -23,7 +29,7 @@ val multiply = JsExecutor.execute("js_obj.multiply", 4, 5) //20
 
 - Load a js bundle and execute functions
 
-```sh
+```groovy
 // Load js bundle file
 JsExecutor.loadJsBundle(this, "JsModule/dist/jsBundle.js")
 
@@ -36,7 +42,7 @@ val logStr = JsExecutor.execute("JsModule.MathJs.log", 10000, 10) //4
 
 - Load a js bundle and execute functions
 
-```sh
+```groovy
 // Primitive types
 val logDouble = JsExecutor.executeToGetObject<Double>("JsModule.MathJs.log", 1000, 10) //2.9999999999999996
 

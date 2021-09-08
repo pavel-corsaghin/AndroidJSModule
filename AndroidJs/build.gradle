@@ -3,6 +3,13 @@ plugins {
     id 'kotlin-android'
 }
 
+ext {
+    PUBLISH_GROUP_ID = 'io.github.pavel-corsaghin'
+    PUBLISH_VERSION = '0.0.1'
+    PUBLISH_ARTIFACT_ID = 'androidjs'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 apply plugin: 'kotlinx-serialization'
 
 android {

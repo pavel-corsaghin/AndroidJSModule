@@ -1,2 +1,0 @@
-com/pavel/example/BuildConfig.java
- com.pavel.example.BuildConfig

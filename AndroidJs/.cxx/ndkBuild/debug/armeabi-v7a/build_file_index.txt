@@ -1,2 +1,0 @@
-/Users/user/Desktop/Works/OpenSources/AndroidJsModule/AndroidJs/src/main/jni/Android.mk
-/Users/user/Desktop/Works/OpenSources/AndroidJsModule/AndroidJs/src/main/jni/Application.mk
