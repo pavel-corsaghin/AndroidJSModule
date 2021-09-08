@@ -6,7 +6,11 @@ export const getMessage = () => {
 
 export class MathJs {
   static log(x, base) {
-    const result = log(x, base);
+    return log(x, base);
+  }
+
+  static doublePoint(inputPoint) {
+    const result = { lat: 2 * inputPoint.lat, lon: 2 * inputPoint.lon };
     return JSON.stringify(result);
   }
 }

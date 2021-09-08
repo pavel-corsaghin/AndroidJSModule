@@ -21,7 +21,7 @@ JSGlobalContextRef globalContext = nullptr;
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_pavel_androidjs_AndroidJs_loadJsScript(JNIEnv *env, jobject thiz, jstring script) {
+Java_com_pavel_androidjs_JsCore_loadJsScript(JNIEnv *env, jobject thiz, jstring script) {
     JSContextGroupRef contextGroup = JSContextGroupCreate();
     globalContext = JSGlobalContextCreateInGroup(contextGroup, nullptr);
     const char *cString = env->GetStringUTFChars(script, 0);
@@ -33,7 +33,7 @@ Java_com_pavel_androidjs_AndroidJs_loadJsScript(JNIEnv *env, jobject thiz, jstri
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_pavel_androidjs_AndroidJs_executeJSFunction(JNIEnv *env, jobject thiz, jstring function) {
+Java_com_pavel_androidjs_JsCore_executeJsFunction(JNIEnv *env, jobject thiz, jstring function) {
     JSStringRef fName = JSStringCreateWithUTF8CString(env->GetStringUTFChars(function, nullptr));
     JSValueRef retValue = JSEvaluateScript(globalContext, fName, nullptr, nullptr, 0, nullptr);
     JSStringRef retString = JSValueToStringCopy(globalContext, retValue, nullptr);

@@ -7,3 +7,5 @@
 /build
 /captures
 app/src/main/assets/JsModule/node_modules
+AndroidJs/.cxx
+app/build/

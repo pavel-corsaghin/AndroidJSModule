@@ -18,10 +18,7 @@
     "soFolder": "/Users/user/Desktop/Works/OpenSources/AndroidJsModule/AndroidJs/build/intermediates/ndkBuild/debug/lib",
     "isDebuggableEnabled": true,
     "validAbiList": [
-      "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
+      "X86"
     ],
     "buildTargetSet": [],
     "implicitBuildTargetSet": [],
@@ -118,6 +115,7 @@
         "sdkFolder": "/Users/user/Library/Android/sdk",
         "isNativeCompilerSettingsCacheEnabled": false,
         "isBuildOnlyTargetAbiEnabled": true,
+        "ideBuildTargetAbi": "x86",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false,
         "isV2NativeModelEnabled": true
