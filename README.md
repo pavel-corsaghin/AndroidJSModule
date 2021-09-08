@@ -40,11 +40,11 @@ val message = JsExecutor.execute("JsModule.getMessage") //This is message from J
 val logStr = JsExecutor.execute("JsModule.MathJs.log", 10000, 10) //4
 ```
 
-- Load a js bundle and execute functions
+- Get custom kotlin object
 
 ```groovy
 // Primitive types
-val logDouble = JsExecutor.executeToGetObject<Double>("JsModule.MathJs.log", 1000, 10) //2.9999999999999996
+val logDouble = JsExecutor.executeToGetObject<Double>("JsModule.MathJs.log", 1000, 10) //2.999
 
 // Custom object
 val inputPoint = Point(3.4, 5.2)
